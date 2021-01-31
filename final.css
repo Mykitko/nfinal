@@ -1,0 +1,507 @@
+@import url('https://fonts.googleapis.com/css?family=Underdog&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+
+body{
+	font-family: 'Underdog', cursive;
+}
+/*Выпадающее меню*/
+
+.abaut_characters{
+	background-image:url(background.jpg);
+	height:650px;
+	display:flex;
+	background-size: cover;
+}
+.characters_menu{
+	width:250px;
+	position:relative;
+	/*background-color:red;*/
+}
+.characters_conteiner{
+	position:relative;
+	flex-grow:1;
+	display: flex;
+	justify-content: center;
+	/*background-color:green;*/
+}
+.fab{
+	position:absolute;
+	bottom:0px;
+	left:70px;
+	cursor:pointer;
+}
+.fab-action-button{
+	width:70px;
+	height:70px;
+	border-radius:50%;
+	background-color:#29B6F6;
+	box-shadow:2px 2px 1px 2px black;
+	padding-top:20px;
+	text-align:center;
+	font-size:16pt;
+	position:relative;
+}
+.fab-buttons__item{
+	list-style:none;
+	width:74px;
+	height:74px;
+	border-radius:50%;
+	border:2px solid black;
+	margin-bottom:10px;
+	position:relative;
+}
+.fab-buttons{
+	display:none;
+	margin-bottom:50px;
+}
+.fab:hover .fab-buttons{
+	display:block;
+}
+.fab:hover .fab-buttons__item{
+	animation: an 1s linear;
+}
+
+@keyframes an{
+	0%{transform: scaleY(0.5) scaleX(0) translateY(40px);}
+	50%{transform: scaleY(1) scaleX(0.5) translateY(40px);}
+	100%{transform: scaleY(1) scaleX(1) translateY(0px);}
+}
+
+.fab-buttons__item:before{
+	content:"";
+	display:block;
+	width:100px;
+	height:30px;
+	background-color:black;
+	padding:0 10px;
+	position:absolute;
+	bottom:30px;
+	left:100px;
+	color:white;
+	opacity:0;
+	transition:opacity 0.5s linear;
+}
+.fab-buttons__item:nth-of-type(1):before{
+	content:"Ерен";
+}
+.fab-buttons__item:nth-of-type(2):before{
+	content:"Мікаса";
+}
+.fab-buttons__item:nth-of-type(3):before{
+	content:"Армін";
+}
+.fab-buttons__item:nth-of-type(4):before{
+	content:"Леві";
+}
+.fab-buttons__item:hover:before{
+	opacity:1;
+}
+.character{
+	width:700px;
+	height:400px;
+	background-color: rgba(255, 255, 255);
+	position:absolute;
+	top:110px;
+	z-index:0;
+	border:2px solid black;
+}
+.character img{
+	padding:30px 15px;
+	margin:30px;
+	border-top:2px solid #29B6F6;
+	border-bottom:2px solid #29B6F6;
+	float:left;
+}
+.character h2{
+	margin:10px;
+}
+.character p{
+	margin:10px;
+}
+#Hiccup{
+	transform:rotate(5deg);
+}
+#Astrid{
+	transform:rotate(-5deg);
+}
+#Gruffnut{transform:rotate(8deg);}
+#Spitelout{transform:rotate(20deg);}
+
+#Hiccup:target{
+	transform:rotate(0deg);
+	z-index:1;
+}
+#Astrid:target{
+	transform:rotate(0deg);
+	z-index:1;
+}
+#Gruffnut:target{
+	transform:rotate(0deg);
+	z-index:1;
+}
+#Spitelout:target{
+	transform:rotate(0deg);
+	z-index:1;
+}
+.tooltip{
+	color: #29B6F6;
+	font-size: 16pt;
+	padding: 20px 45px;
+	border-radius: 10px;
+	background-color: white;
+	position: absolute;
+	left: 30px;
+	bottom: 130px;
+	animation: tooltip_jump 1s linear infinite alternate;
+	
+	
+}
+.tooltip:after{
+	content: "";
+	display: block;
+	width: 40px;
+	height: 25px;
+	transform: skewY(-60deg) skewX(15deg) rotate(100deg);
+	background-color: white;
+	position: absolute;
+	left: 10px;
+	bottom: -7px;
+	
+}
+.fab:hover .tooltip{
+	display: none;
+}
+@keyframes tooltip_jump{
+	0%{transform: translateY(-30px);}
+	
+	100%{transform: translateY(20px);}
+}
+
+/*Аккордион*/
+
+.about_dragons{
+	
+}
+
+.about_dragons{
+	background-image: url(shifters.webp);
+	min-height: 670px;
+	background-size: cover;
+	background-attachment: fixed;
+	padding: 30px;
+}
+
+.accordion{
+	width: 800px;
+	border: 2px solid #ADFF2F;
+	margin: 0px auto;
+	background: linear-gradient(to bottom left, #CDFF9C 0%, #4895CF 100%);
+
+}
+
+.about_dragons ul{
+	list-style: none;
+}
+
+.accordion ul li{
+	position: relative;
+}
+
+.accordion_header{
+	height: 80px;
+	padding: 10px 25px;
+	background: rgb(197,246, 0.5) ;
+	background: linear-gradient(90deg, rgba(197,246,1, 0.5) 0%, rgba(255,124,19,1) 54%, rgba(255,74,0, 0.5) 100%);C00 
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	border-top: 1px solid #FFFF00;
+	border-bottom: 1px solid #FFD700;
+
+
+
+}
+
+.accordion_header h2{
+	font-size: 30pt;
+	color: white;
+	margin-left: 20px;
+}
+
+.accordion_header img{
+	width: 72px;
+	height: 72px;
+	border-radius: 50%;
+	border: 2px solid black;
+
+}
+
+.msg{
+	max-height: 0px;
+	overflow: hidden;
+	opacity: 0;
+	transform: translate(0, 50%);
+	transition: all 0.5s ease-in-out;
+}
+.msg p{
+	font-size: 16pt;
+	color: grey;
+	padding: 10px 20px;
+}
+.msg img{
+	float: right;
+	padding: 10px 20px;
+	width: 400px;
+	height: 300px;
+	border-radius: 10% 30% 20% 30%;
+}
+
+.msg{
+	max-height: 0px;
+	overflow: hidden;
+	opacity: 0;
+	transform: translate(0, 50%);
+	transition: all 0.5s ease-in-out;
+}
+
+.accordion ul li input:checked~ div.msg{
+	max-height: 800px;
+	opacity: 1;
+	transform: translate(0, 0);
+}
+
+.accordion ul li input{
+	position: absolute;
+	width: 100%;
+	height: 80px;
+	opacity: 0;
+}
+
+.accordion ul li span{
+	display: block;
+	width: 9px;
+	height: 9px;
+	position: absolute;
+	top: 15px;
+	right: 30px;
+}
+
+.accordion ul li span:before{
+	content: "";
+	position: absolute;
+	display: block;
+	background-color: white;
+	width: 3px;
+	height: 9px;
+	transform: translate(2px, 0) rotate(45deg);
+	transition: all 0.5s ease-in-out;
+}
+
+.accordion ul li span:after{
+	content: "";
+	position: absolute;
+	display: block;
+	background-color: white;
+	width: 3px;
+	height: 9px;
+	transform: translate(-2px, 0) rotate(-45deg);
+}
+
+.accordion ul li input:checked~ span:before{
+	transform: translate(-2px, 0) rotate(45deg);
+}
+
+.accordion ul li input:checked~ span:after{
+	transform: translate(2px, 0) rotate(-45deg);
+}
+
+.about_film{
+	background-image: url(eren_titan.jpg);
+	background-size:cover;
+	height: 670px;
+	display: flex;
+
+}
+
+.about_film input{
+	display: none;
+}
+
+.about_film label{
+	display: block;
+	box-shadow: 2px 0px 8px 2px black, -2px 0px 5px 1px white;
+	cursor: pointer;
+}
+
+.about_film div{
+	overflow: hidden;
+	background-color: rgba(189, 209, 234, 0.7);
+	width: 0;
+	transition: width 0.5s linear;
+}
+
+#data1:checked~ div:nth-of-type(1){
+	width: 100%;
+
+}
+
+#data2:checked~ div:nth-of-type(2){
+	width: 100%;
+	
+}
+
+#data3:checked~ div:nth-of-type(3){
+	width: 100%;
+	
+}
+
+#data4:checked~ div:nth-of-type(4){
+	width: 100%;
+	
+}
+
+#data5:checked~ div:nth-of-type(5){
+	width: 100%;
+	
+}
+
+.about_film div img{
+	padding: 20px;
+}
+
+.about_film div p{
+	padding: 20px;
+	font-size: 16pt;
+}
+
+div:nth-of-type(3) img{
+	float: left;
+}
+
+div:nth-of-type(2) img{
+	float: right;
+}
+
+div:nth-of-type(1) img{
+	float: left;
+}
+
+div:nth-of-type(4) img{
+	float: left;
+	width: 350px;
+	height: 350px;
+}
+
+div:nth-of-type(5) img{
+	float: left;
+	width: 330px;
+	height: 200px;
+}
+
+header{
+	height: 670px;
+	background-image: url(f_background.jpg);
+	background-size: cover;
+	position: relative;
+}
+
+nav{
+	position: relative;
+	top: 15px;
+	display: flex;
+	justify-content: center;
+	
+}
+
+nav ul{
+	display: flex;
+	list-style: none;
+	font-size: 40pt;
+	color: #FFFFFF;
+	border-radius: 10% 0% 10% 0% / 80% 0% 80% 0%; 
+	
+}
+
+
+
+
+/*nav ul li{
+	margin: 0 20px;
+	display: flex;
+	align-items: center;
+}*/
+
+nav ul li{
+  font-family: 'arial black';
+  font-weight: bold;
+  color: #14396A !important;
+  font-size: 30px;
+  text-shadow: 1px 1px 0px #7CACDE;
+  box-shadow: 0px 2px 2px #BEE2F9;
+  padding: 22px 37px;
+  border-radius: 15px;
+  border: 2px outset #3866A3;
+  background: #356380;
+  background: linear-gradient(to top, #356380, #468CCF);
+  margin: 20px;
+}
+nav ul li:hover {
+	 color: #14396A !important;
+  	background: #468CCF;
+  	background: linear-gradient(to top, #468CCF, #63B8EE);
+}
+
+.fab-buttons__item img{
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+}
+
+#Hiccup img{
+	width: 300px;
+	height: 220px; 
+}
+
+#levi img{
+	width: 200px;
+	height: 300px;
+}
+
+div:nth-of-type(2) h2{
+	margin-left: 20px;
+}
+
+.text_back{
+	position: absolute;
+	bottom: 50px;
+	right: 100px;
+	font-size: 70pt;
+	color: #63C0FF;
+	line-height: 1;
+	background-image: url(poster-kak.jpg);
+	background-size: cover;
+	-webkit-background-clip:text;
+	-webkit-text-fill-color: transparent;
+
+}
+
+.text_front{
+	position: absolute;
+	bottom: 50px;
+	right: 100px;
+	font-size: 70pt;
+	line-height: 1;
+	
+	mix-blend-mode: color;
+}
+
+header span{
+	font-size: 90pt;
+}
